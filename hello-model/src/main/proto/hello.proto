@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package sayem.hello;
+
+option java_package = "org.sayem.hello";
+
+option java_outer_classname = "HelloModel";
+
+//
+// Request / Response
+//
+
+message GreetingRequest {
+    string name = 1;
+}
+
+message GreetingReply {
+    string greeting = 2;
+}
+
+//
+// Service
+//
+
+service HelloService {
+    rpc GetGreeting (GreetingRequest) returns (GreetingReply) {
+    }
+}
